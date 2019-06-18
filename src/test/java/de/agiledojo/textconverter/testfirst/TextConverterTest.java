@@ -32,18 +32,17 @@ class TextConverterTest {
         assertThat(html).isEqualTo("<p>this is a line.</p>");
     }
 
-//        @Test
-//        void multipleLinesseparatedbylinebreak() {
-//            TextConverter converter = new TextConverter();
-//            String html = converter.convertToHtml("this is the first line.\nthis is the second line.\nthis is the third line.");
-//            assertThat(html).isEqualTo("<p>this is the first line.<br/>this is the second line.<br/>this is the third line.</p>");
-//        }
-//
-//        @Test
-//        void multipleParagraphs() {
-//            TextConverter converter = new TextConverter();
-//            String html = converter.convertToHtml("this is a paragraph 1.\n\nthis is paragraph 2.");
-//            assertThat(html).isEqualTo("<p>this is a paragraph 1.</p><p>this is paragraph 2.</p>");
-//        }
+    @Test
+    void multipleLinesseparatedbylinebreak() {
+        String html = converter.convertToHtml("first line.\nsecond line.\nthird line.\n");
+        assertThat(html).isEqualTo("<p>first line.<br/>second line.<br/>third line.</p>");
+    }
+
+    @Test
+    void multipleParagraphs() {
+        TextConverter converter = new TextConverter();
+        String html = converter.convertToHtml("this is a paragraph 1.\n\nthis is paragraph 2.");
+        assertThat(html).isEqualTo("<p>this is a paragraph 1.</p><p>this is paragraph 2.</p>");
+    }
 
     }
