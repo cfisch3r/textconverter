@@ -1,4 +1,4 @@
-package de.agiledojo.textconverter;
+package de.agiledojo.textconverter.testlast;
 
 import java.util.Scanner;
 
